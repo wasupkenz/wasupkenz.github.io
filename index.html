@@ -1,35 +1,39 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello Kenz</title>
     <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f0f0f0;
-            font-family: Arial, sans-serif;
-        }
-        .container {
-            text-align: center;
-            padding: 20px;
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-        h1 {
-            color: #333;
+        /* 自定义悬浮入口的位置 */
+        #position_demo {
+            position: absolute;
+            right: 10px;
+            bottom: 20px;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Hello Kenz!</h1>
-        <p>Welcome to your personal webpage.</p>
-    </div>
+<h1>智能体测试</h1>
+<div id="position_demo"></div>
+<script src="https://lf-cdn.coze.cn/obj/unpkg/flow-platform/chat-app-sdk/0.1.0-beta.5/libs/cn/index.js"></script>
+<script>
+    const bot_id = '7512022752296583195';
+    // 自定义智能体名称和icon
+    const title = '展厅策划方案助手';
+    const icon = 'https://lf-bot-studio-plugin-resource.coze.cn/obj/bot-studio-platform-plugin-tos/artist/image/7e813aa2c7e14ebb9e2d1a989acfb128.png';
+    const lang = 'zh-CN';
+    const layout = 'pc';
+    const width = 800;
+    
+    new CozeWebSDK.WebChatClient({
+        config: {
+            bot_id,
+        },
+        componentProps: {
+            title,
+            icon,
+            width,
+        },
+        el: document.getElementById('position_demo'),
+    });
+</script>
 </body>
 </html>
